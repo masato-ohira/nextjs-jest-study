@@ -5,7 +5,7 @@ const CalcPage = () => {
   // const
 
   return (
-    <Container py={8}>
+    <Container minW={'container.md'} py={8}>
       <MyBmiForm />
     </Container>
   )

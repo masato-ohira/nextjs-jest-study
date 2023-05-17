@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { ChakraProvider } from '@chakra-ui/react'
-import IndexPage from '@/pages/index'
+import IndexPage from './index'
 import { RecoilRoot } from 'recoil'
 
 describe('IndexPage', () => {

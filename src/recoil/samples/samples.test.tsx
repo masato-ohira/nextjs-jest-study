@@ -1,6 +1,6 @@
 import { RecoilRoot } from 'recoil'
 import { renderHook, waitFor } from '@testing-library/react'
-import { PhotoType, useAlbums } from './samples'
+import { PhotoType, useAlbums } from '.'
 
 describe('useAlbums', () => {
   const { result } = renderHook(() => useAlbums(), {

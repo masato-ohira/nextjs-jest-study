@@ -1,4 +1,4 @@
-import { calcBmi } from './useBmi'
+import { calcBmi } from '.'
 
 describe('calcBmi', () => {
   it('想定されるBMI計算', () => {
@@ -11,7 +11,7 @@ describe('calcBmi', () => {
   })
 
   it('文字列を入力されたケース', () => {
-    const height = '１８０'
+    const height: any = '１８０'
     const weight = 70
     const expectedBmi = null
     const actualBmi = calcBmi({ height, weight })
@@ -19,8 +19,8 @@ describe('calcBmi', () => {
   })
 
   it('想定外の型が入力されたケース', () => {
-    const height = { height: 180 }
-    const weight = [70]
+    const height: any = { height: 180 }
+    const weight: any = [70]
     const expectedBmi = null
     const actualBmi = calcBmi({ height, weight })
     expect(actualBmi).toBe(expectedBmi)

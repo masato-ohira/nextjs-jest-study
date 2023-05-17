@@ -1,10 +1,19 @@
-import { Container } from '@chakra-ui/react'
-import { MyPhotoList } from '@/components/MyPhotoList'
+import { Button, Container, Stack, Center } from '@chakra-ui/react'
+import Link from 'next/link'
 
 const IndexPage = () => {
   return (
-    <Container minW={'container.xl'} py={8}>
-      <MyPhotoList />
+    <Container>
+      <Center minH={'100vh'}>
+        <Stack spacing={6}>
+          <Link href={'/posts'}>
+            <Button>記事一覧</Button>
+          </Link>
+          <Link href={'/bmi'}>
+            <Button>Bmiフォーム</Button>
+          </Link>
+        </Stack>
+      </Center>
     </Container>
   )
 }

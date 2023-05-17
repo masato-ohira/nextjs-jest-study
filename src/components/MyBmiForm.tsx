@@ -1,15 +1,19 @@
 import { useForm } from 'react-hook-form'
-import { calcBmi, useBmi } from '@/hooks/useBmi'
+import { calcBmi, useBmi } from '@/recoil/bmi'
 
 import {
   Box,
+  Text,
   Stack,
   FormControl,
   FormLabel,
   Input,
   HStack,
+  Divider,
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
+import { MyBmiTable } from './MyBmiTable'
+import { MyBmiResults } from './MyBmiResults'
 
 export const MyBmiForm = () => {
   const {
@@ -18,7 +22,7 @@ export const MyBmiForm = () => {
     formState: { errors },
   } = useForm()
 
-  const { bmi, setBmi } = useBmi()
+  const { setBmi } = useBmi()
 
   useEffect(() => {
     setBmi(
@@ -58,11 +62,11 @@ export const MyBmiForm = () => {
             })}
           />
         </FormControl>
-        <HStack>
-          <Box>BMI</Box>
-          <Box>=</Box>
-          <Box>{bmi ? <>{bmi}</> : <>計算できませんでした</>}</Box>
-        </HStack>
+
+        <MyBmiResults />
+
+        <Divider />
+        <MyBmiTable />
       </Stack>
     </Box>
   )
