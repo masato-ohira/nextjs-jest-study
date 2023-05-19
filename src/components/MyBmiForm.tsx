@@ -3,12 +3,10 @@ import { calcBmi, useBmi } from '@/recoil/bmi'
 
 import {
   Box,
-  Text,
   Stack,
   FormControl,
   FormLabel,
   Input,
-  HStack,
   Divider,
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
@@ -34,11 +32,12 @@ export const MyBmiForm = () => {
   }, [watch('height'), watch('weight')])
 
   return (
-    <Box shadow={'md'} p={8}>
+    <Box shadow={'md'} p={8} data-testid='bmi-form'>
       <Stack spacing={8}>
         <FormControl>
-          <FormLabel data-testid='bmi-input-height'>身長（cm）</FormLabel>
+          <FormLabel data-testid='bmi-label-height'>身長（cm）</FormLabel>
           <Input
+            data-testid='bmi-input-height'
             step={0.1}
             defaultValue={0}
             min={0}
@@ -50,8 +49,9 @@ export const MyBmiForm = () => {
           />
         </FormControl>
         <FormControl>
-          <FormLabel data-testid='bmi-input-weight'>体重（kg）</FormLabel>
+          <FormLabel data-testid='bmi-label-weight'>体重（kg）</FormLabel>
           <Input
+            data-testid='bmi-input-weight'
             step={0.1}
             defaultValue={0}
             min={0}

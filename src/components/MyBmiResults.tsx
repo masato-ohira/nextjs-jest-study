@@ -1,8 +1,8 @@
-import { useBmi } from '@/recoil/bmi'
+import { useBmi, getBmiLevel } from '@/recoil/bmi'
 import { Stack, HStack, Box, Text } from '@chakra-ui/react'
 
 export const MyBmiResults = () => {
-  const { bmi, getBmiLevel } = useBmi()
+  const { bmi } = useBmi()
   return (
     <Stack>
       {bmi ? (
@@ -13,8 +13,12 @@ export const MyBmiResults = () => {
             <Box>{bmi}</Box>
           </HStack>
           <Box>
-            <Text fontWeight={'bold'} color={getBmiLevel('color')}>
-              {getBmiLevel('label')}
+            <Text
+              data-testid='bmi-form-result'
+              fontWeight={'bold'}
+              color={getBmiLevel(bmi, 'color')}
+            >
+              {getBmiLevel(bmi, 'label')}
             </Text>
           </Box>
         </>

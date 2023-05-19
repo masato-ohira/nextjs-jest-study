@@ -1,10 +1,10 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { RecoilRoot } from 'recoil'
-import { MyBmiForm } from './MyBmiForm'
+import { MyBmiForm } from '@/components/MyBmiForm'
 import { ChakraProvider } from '@chakra-ui/react'
 
 describe('MyBmiForm', () => {
-  it('レンダリング可能であるか', async () => {
+  test('レンダリング可能であるか', async () => {
     render(
       <RecoilRoot>
         <MyBmiForm />
@@ -12,7 +12,7 @@ describe('MyBmiForm', () => {
     )
   })
 
-  it('すべてのinputTypeがnumberである', async () => {
+  test('inputタグの出力結果を検証する', async () => {
     render(
       <RecoilRoot>
         <ChakraProvider>
@@ -28,12 +28,12 @@ describe('MyBmiForm', () => {
     })
 
     // 身長ラベルのテキストを検証
-    const heightLabel = screen.getByTestId('bmi-input-height')
+    const heightLabel = screen.getByTestId('bmi-label-height')
     expect(heightLabel).toBeInTheDocument()
     expect(heightLabel.textContent).toContain('身長')
 
     // 身長ラベルのテキストを検証
-    const weightLabel = screen.getByTestId('bmi-input-weight')
+    const weightLabel = screen.getByTestId('bmi-label-weight')
     expect(weightLabel).toBeInTheDocument()
     expect(weightLabel.textContent).toContain('体重')
   })

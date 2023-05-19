@@ -1,7 +1,7 @@
 import { MyBmiForm } from '@/components/MyBmiForm'
 import { Container } from '@chakra-ui/react'
 
-const CalcPage = () => {
+const BmiPage = () => {
   // const
 
   return (
@@ -11,4 +11,4 @@ const CalcPage = () => {
   )
 }
 
-export default CalcPage
+export default BmiPage

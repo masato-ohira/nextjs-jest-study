@@ -1,10 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import { RecoilRoot } from 'recoil'
-import { MyPhotoList } from './MyPhotoList'
-import { uniq, map } from 'lodash'
+import { MyPhotoList } from '@/components/MyPhotoList'
+import { uniq } from 'lodash'
 
 describe('MyPhotoList', () => {
-  it('画像の出力結果が正しい事を検証', async () => {
+  test('画像の出力結果が正しい事を検証', async () => {
     render(
       <RecoilRoot>
         <MyPhotoList />

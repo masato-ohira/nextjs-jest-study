@@ -1,22 +1,10 @@
 import { render, screen } from '@testing-library/react'
 import { ChakraProvider } from '@chakra-ui/react'
-import IndexPage from './index'
+import IndexPage from '@/pages/posts/index'
 import { RecoilRoot } from 'recoil'
 
 describe('IndexPage', () => {
-  it('正しくレンダーされている', () => {
-    render(
-      <>
-        <RecoilRoot>
-          <ChakraProvider>
-            <IndexPage />
-          </ChakraProvider>
-        </RecoilRoot>
-      </>,
-    )
-  })
-
-  it('コンポーネントが出力されている', async () => {
+  test('コンポーネントが出力されている', async () => {
     render(
       <>
         <RecoilRoot>

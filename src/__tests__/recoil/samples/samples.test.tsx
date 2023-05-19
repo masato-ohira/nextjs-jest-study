@@ -1,6 +1,6 @@
 import { RecoilRoot } from 'recoil'
 import { renderHook, waitFor } from '@testing-library/react'
-import { PhotoType, useAlbums } from '.'
+import { PhotoType, useAlbums } from '@/recoil/samples'
 
 describe('useAlbums', () => {
   const { result } = renderHook(() => useAlbums(), {
@@ -16,7 +16,7 @@ describe('useAlbums', () => {
     thumbnailUrl: 'https://via.placeholder.com/150/92c952',
   }
 
-  it('api読み込み後のデータを検証', async () => {
+  test('api読み込み後のデータを検証', async () => {
     // Recoil loadableStateが `hasValue` になるまで待つ
     await waitFor(() => {
       expect(result.current.state).toEqual('hasValue')

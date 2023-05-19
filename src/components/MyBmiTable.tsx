@@ -10,10 +10,9 @@ import {
   Stack,
 } from '@chakra-ui/react'
 
-import { useBmi } from '@/recoil/bmi'
+import { useBmi, bmiGuidelines, valueText } from '@/recoil/bmi'
 
 export const MyBmiTable = () => {
-  const { bmiGuidelines, valueText } = useBmi()
   return (
     <Stack>
       <Text fontWeight={'bold'}>BMIの判定基準</Text>
