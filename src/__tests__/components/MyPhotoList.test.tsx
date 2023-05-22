@@ -19,9 +19,12 @@ describe('MyPhotoList', () => {
     expect(images).toHaveLength(50)
 
     // すべての画像はユニークなURLである
-    let imageUrls: any[] = []
+    let imageUrls: string[] = []
     images.forEach((img) => {
-      imageUrls.push(img.getAttribute('src'))
+      const imgURL = img.getAttribute('src')
+      if (imgURL) {
+        imageUrls.push(imgURL)
+      }
     })
     imageUrls = uniq(imageUrls)
     expect(imageUrls).toHaveLength(50)

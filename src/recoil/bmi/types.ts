@@ -1,3 +1,5 @@
+export type BmiType = number | null
+
 export type GuidelineType = {
   id: string
   max?: number

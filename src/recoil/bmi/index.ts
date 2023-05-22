@@ -2,12 +2,12 @@ import { ceil, find, get } from 'lodash-es'
 import { atom, useRecoilState } from 'recoil'
 
 import dataJson from './data.json'
-import type { GuidelineType } from './types'
+import type { GuidelineType, BmiType } from './types'
 import { useEffect } from 'react'
 
 // atoms
 // ------------------------------
-export const bmiAtom = atom<number | null>({
+export const bmiAtom = atom<BmiType>({
   key: 'bmi/bmiAtom',
   default: null,
 })
@@ -20,7 +20,7 @@ export const calcBmi = ({
 }: {
   height: number
   weight: number
-}): number | null => {
+}): BmiType => {
   const h = height * 0.01
   const result = ceil(weight / (h * h), 4)
 
@@ -68,7 +68,7 @@ export const getBmiLevel = (bmi: number, key: string) => {
 // hooks
 // ------------------------------
 export const useBmi = (defaultBmi?: number) => {
-  const [bmi, setBmi] = useRecoilState(bmiAtom)
+  const [bmi, setBmi]: [BmiType, Function] = useRecoilState(bmiAtom)
 
   useEffect(() => {
     if (defaultBmi) {
