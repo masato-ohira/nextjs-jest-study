@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "pretest": "jest src/__tests__/localhost.test.ts --verbose",
+    "pretest": "jest src/__tests__/localhost.test.ts",
     "test": "jest --verbose",
     "git": "git add . && git commit -a -m $M",
     "prepare": "husky install"
