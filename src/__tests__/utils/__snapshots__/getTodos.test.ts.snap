@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getTodosの型は常に同じである 1`] = `
+[
+  "userId",
+  "id",
+  "title",
+  "completed",
+]
+`;
