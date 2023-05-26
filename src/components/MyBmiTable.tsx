@@ -10,7 +10,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 
-import { useBmi, bmiGuidelines, valueText } from '@/recoil/bmi'
+import { bmiGuidelines, valueText } from '@/recoil/bmi'
 
 export const MyBmiTable = () => {
   return (
