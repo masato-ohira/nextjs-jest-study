@@ -18,14 +18,10 @@ export const MyPhotoList = () => {
         gap={6}
       >
         {contents.map((i: PhotoType) => {
+          const imageURL = `https://placehold.jp/18C37D/fff/300x300.png?text=${i.id}`
           return (
             <Box key={i.id}>
-              <MyLazyImage
-                src={i.thumbnailUrl}
-                alt={i.title}
-                w={'100%'}
-                h={'auto'}
-              />
+              <MyLazyImage src={imageURL} alt={i.title} w={'100%'} h={'auto'} />
               <Text mt={4}>{i.title}</Text>
             </Box>
           )
